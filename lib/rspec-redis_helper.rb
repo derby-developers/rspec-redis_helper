@@ -24,8 +24,8 @@ module RSpec
     end
 
     def with_clean_redis(&block)
-      redis.client.disconnect   # auto connect after fork
-      redis2.client.disconnect  # auto connect after fork
+      redis._client.disconnect   # auto connect after fork
+      redis2._client.disconnect  # auto connect after fork
       redis.flushdb             # clean before run
       begin
         yield
