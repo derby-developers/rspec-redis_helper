@@ -7,11 +7,11 @@ module RSpec
     TEST = CONFIG # deprecated
 
     def redis
-      @redis ||= ::Redis.connect(CONFIG)
+      @redis ||= ::Redis.new(CONFIG)
     end
 
     def redis2
-      @redis2 ||= ::Redis.connect(CONFIG)
+      @redis2 ||= ::Redis.new(CONFIG)
     end
 
     def with_watch( redis, *args )
